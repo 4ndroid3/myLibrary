@@ -29,8 +29,16 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+OWN_APPS = [
+    'base_app',
+    'user_books',
+    'books',
+]
 
-INSTALLED_APPS = [
+THIRD_PARTY_APPS = [
+    'django_extensions',
+]
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + OWN_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
