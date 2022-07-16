@@ -42,11 +42,9 @@ class Libro(CustomModel):
         help_text="Cantidad de hojas del libro",
         verbose_name='Cantidad de Hojas',      
     )
-    genero = models.ForeignKey(
-        "books.Autor",
+    genero = models.ManyToManyField(
+        "books.Genero",
         related_name='genero_libro',
-        on_delete=models.DO_NOTHING,
-        null=True,
         help_text="Genero Literario asociado al libro"
     )
     img_cover = models.CharField(
