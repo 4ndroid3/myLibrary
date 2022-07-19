@@ -3,8 +3,9 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework import mixins
 from rest_framework.routers import APIRootView
 
-from books.models.about_libros import Genero
-from books.serializers.books import GeneroSerializer, GeneroSerializerMin
+from books.models.about_libros import Autor, Genero
+from books.serializers import books
+from books.models import Libro
 
 
 class BooksRootView(APIRootView):
@@ -22,10 +23,10 @@ class GenerosView(mixins.CreateModelMixin,
                   GenericViewSet):
     """ ViewSet de los generos,
     permite `listar`, `crear` y `actualizar`"""
-    queryset = Genero.objects.filter().order_by('-nombre')
-    serializer_class = GeneroSerializerMin
+    queryset = Genero.objects.filter().order_by('nombre')
+    serializer_class = books.GeneroSerializerMin
     serializer_action_classes = {
-        'retrieve': GeneroSerializer
+        'retrieve': books.GeneroSerializer
     }
 
     def get_serializer_class(self):
@@ -42,4 +43,36 @@ class AutoresView(mixins.CreateModelMixin,
                   GenericViewSet):
     """ ViewSet de los Autores,
     permite `listar`, `crear`, `eliminar` y `actualizar` """
-    pass
+    queryset = Autor.objects.filter().order_by('apellido')
+    serializer_class = books.AutorSerializerMin
+    serializer_action_classes = {
+        'retrieve': books.AutorSerializer
+    }
+
+    def get_serializer_class(self):
+        try:
+            self.serializer_action_classes
+            return self.serializer_action_classes[self.action]
+        except (KeyError, AttributeError):
+            return super().get_serializer_class()
+
+
+class LibrosView(mixins.CreateModelMixin,
+                  mixins.RetrieveModelMixin,
+                  mixins.UpdateModelMixin,
+                  mixins.ListModelMixin,
+                  GenericViewSet):
+    """ ViewSet de los Autores,
+    permite `listar`, `crear`, `eliminar` y `actualizar` """
+    queryset = Libro.objects.filter().order_by('autor')
+    serializer_class = books.LibroSerializerMin
+    serializer_action_classes = {
+        'retrieve': books.LibroSerializer
+    }
+
+    def get_serializer_class(self):
+        try:
+            self.serializer_action_classes
+            return self.serializer_action_classes[self.action]
+        except (KeyError, AttributeError):
+            return super().get_serializer_class()
