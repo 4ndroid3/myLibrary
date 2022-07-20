@@ -3,6 +3,7 @@
 from rest_framework import serializers
 from books.models.about_libros import Autor, Genero
 from books.models.libros import Libro
+from django.contrib.auth.models import User
 
 
 class GeneroSerializer(serializers.ModelSerializer):
@@ -48,6 +49,15 @@ class AutorSerializerMin(serializers.ModelSerializer):
 
 class LibroSerializer(serializers.ModelSerializer):
     """ Serializador detallado de Libro """
+    created_by = serializers.PrimaryKeyRelatedField(
+        read_only=True
+    )
+    genero = serializers.SlugRelatedField(
+        slug_field='id',
+        queryset=Genero.objects.all(),
+        many=True
+    )
+    # updated_by = 
     class Meta:
         model = Libro
         fields = '__all__'
@@ -59,6 +69,7 @@ class LibroSerializerMin(serializers.ModelSerializer):
     class Meta:
         model = Libro
         fields = (
+            'id',
             'url',
             'nombre',
             'autor',

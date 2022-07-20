@@ -1,3 +1,5 @@
+""" Vistas de Libros y sus relaciones """
+
 from django.shortcuts import render
 from rest_framework.viewsets import GenericViewSet
 from rest_framework import mixins
@@ -31,7 +33,7 @@ class GenerosView(mixins.CreateModelMixin,
 
     def get_serializer_class(self):
         try:
-            self.serializer_action_classes
+            # self.serializer_action_classes
             return self.serializer_action_classes[self.action]
         except (KeyError, AttributeError):
             return super().get_serializer_class()
@@ -43,6 +45,7 @@ class AutoresView(mixins.CreateModelMixin,
                   GenericViewSet):
     """ ViewSet de los Autores,
     permite `listar`, `crear`, `eliminar` y `actualizar` """
+
     queryset = Autor.objects.filter().order_by('apellido')
     serializer_class = books.AutorSerializerMin
     serializer_action_classes = {
@@ -63,16 +66,20 @@ class LibrosView(mixins.CreateModelMixin,
                   mixins.ListModelMixin,
                   GenericViewSet):
     """ ViewSet de los Autores,
-    permite `listar`, `crear`, `eliminar` y `actualizar` """
+    permite `listar`, `crear`, `eliminar` y `actualizar`   """
     queryset = Libro.objects.filter().order_by('autor')
     serializer_class = books.LibroSerializerMin
     serializer_action_classes = {
-        'retrieve': books.LibroSerializer
+        'retrieve': books.LibroSerializer,
+        'create': books.LibroSerializer
     }
 
     def get_serializer_class(self):
         try:
-            self.serializer_action_classes
             return self.serializer_action_classes[self.action]
         except (KeyError, AttributeError):
             return super().get_serializer_class()
+    
+    def perform_create(self, serializer):
+        print(self.request.user)
+        serializer.save(created_by=self.request.user)
