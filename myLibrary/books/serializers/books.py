@@ -57,6 +57,9 @@ class LibroSerializer(serializers.ModelSerializer):
         queryset=Genero.objects.all(),
         many=True
     )
+    img_cover = serializers.CharField(
+        required=False
+    )
     # updated_by = 
     class Meta:
         model = Libro

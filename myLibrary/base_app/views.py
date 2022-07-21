@@ -20,4 +20,5 @@ class APIRootView(APIView):
     def get(self, request, format=None):
         return Response(OrderedDict((
             ('books', reverse('books-api:api-root', request=request, format=format)),
+            ('user_books', reverse('user_books-api:api-root', request=request, format=format)),
         )))

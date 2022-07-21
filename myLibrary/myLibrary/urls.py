@@ -27,6 +27,7 @@ SchemaView = get_schema_view(
 urlpatterns = [
 	path('api/', APIRootView.as_view(), name='api-root'),
 	path('api/books/', include('books.urls')),
+	path('api/user-books/', include('user_books.urls')),
 	path('admin/', admin.site.urls),
 	path('api-auth/', include('rest_framework.urls')),
 	re_path(
