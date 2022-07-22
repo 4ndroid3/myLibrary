@@ -1,5 +1,7 @@
-from django.shortcuts import render
+""" View base de la API """
+
 from collections import OrderedDict
+
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework.views import APIView

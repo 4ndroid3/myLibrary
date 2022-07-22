@@ -1,15 +1,14 @@
-from django.shortcuts import render
+""" Views de Libros Guardados """
 
 from rest_framework.routers import APIRootView
 from rest_framework import mixins
-from rest_framework.viewsets import GenericViewSet, ModelViewSet
-
+from rest_framework.viewsets import (
+	GenericViewSet,
+	ModelViewSet,
+)
 from user_books.models.libro_leido import LibroGuardado
 from user_books.models.estanteria import Estante
-
 from user_books.serializers import users
-
-# Create your views here.
 
 
 class UserBooksRootView(APIRootView):

@@ -1,9 +1,7 @@
 # """ Custom Models and Generals Models """
 
-from model_utils import models as custom_models
-
-
 from django.db import models
+from model_utils import models as custom_models
 
 class CustomModel(custom_models.TimeStampedModel, models.Model):
     """ Abstract Model with customizations.

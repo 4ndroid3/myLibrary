@@ -1,9 +1,10 @@
 """ serializadores de todo lo relacionado con los libros leidos """
+
 from rest_framework import serializers
+
 from books.models.libros import Libro
 from books.serializers.books import LibroSerializerMin
 from user_books.models.libro_leido import LibroGuardado
-
 from user_books.models import Estante
 
 class EstanteriaSerializer(serializers.ModelSerializer):

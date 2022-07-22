@@ -1,6 +1,6 @@
 """ Modelos para los generos """
-from base_app.models import CustomModel
 from django.db import models
+from base_app.models import CustomModel
 
 class Genero(CustomModel):
     """ Modelo que representa un genero """

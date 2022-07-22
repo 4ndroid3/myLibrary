@@ -1,9 +1,12 @@
 """ Serializadores de Libros y sus relaciones """
 
 from rest_framework import serializers
-from books.models.about_libros import Autor, Genero
+
+from books.models.about_libros import (
+    Autor,
+    Genero,
+)
 from books.models.libros import Libro
-from django.contrib.auth.models import User
 
 
 class GeneroSerializer(serializers.ModelSerializer):

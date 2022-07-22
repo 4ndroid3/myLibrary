@@ -1,11 +1,13 @@
 """ Vistas de Libros y sus relaciones """
 
-from django.shortcuts import render
 from rest_framework.viewsets import GenericViewSet
 from rest_framework import mixins
 from rest_framework.routers import APIRootView
 
-from books.models.about_libros import Autor, Genero
+from books.models import (
+    Autor,
+    Genero,
+)
 from books.serializers import books
 from books.models import Libro
 

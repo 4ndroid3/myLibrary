@@ -1,7 +1,9 @@
 """ Modelos de Libros guardados y leidos """
-from base_app.models import CustomModel
+
 from django.db import models
 from django.contrib.auth.models import User
+
+from base_app.models import CustomModel
 
 class LibroGuardado(CustomModel):
     """ Modelo que representa un libro
