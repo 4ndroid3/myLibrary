@@ -53,9 +53,23 @@ class LibroSerializer(serializers.ModelSerializer):
         read_only=True
     )
     genero = serializers.SlugRelatedField(
-        slug_field='id',
+        slug_field='nombre',
+        many=True,
+        read_only=True,
+    )
+    genero_id = serializers.PrimaryKeyRelatedField(
+        source='genero',
         queryset=Genero.objects.all(),
-        many=True
+        many=True,
+        write_only=True,
+    )
+    autor = AutorSerializerMin(
+        read_only=True,
+    )
+    autor_id = serializers.PrimaryKeyRelatedField(
+        source='autor',
+        queryset=Autor.objects.all(),
+        write_only=True,
     )
     img_cover = serializers.CharField(
         required=False
@@ -69,6 +83,9 @@ class LibroSerializer(serializers.ModelSerializer):
 class LibroSerializerMin(serializers.ModelSerializer):
     """ Serializador resumido de Libro """
     url = serializers.HyperlinkedIdentityField(view_name='books-api:libro-detail')
+    autor = AutorSerializerMin(
+        read_only=True,
+    )
     class Meta:
         model = Libro
         fields = (

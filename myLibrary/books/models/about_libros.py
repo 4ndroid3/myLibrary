@@ -38,4 +38,4 @@ class Autor(CustomModel):
     )
 
     def __str__(self):
-        return self.nombre, self.apellido
+        return self.nombre + self.apellido

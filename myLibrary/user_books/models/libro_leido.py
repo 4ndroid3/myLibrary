@@ -43,3 +43,9 @@ class LibroGuardado(CustomModel):
         on_delete=models.DO_NOTHING,
         null=True,
     )
+
+    def __str__(self):
+        try:
+            return str(self.libro.nombre) + ' | ' + str(self.fecha_leido)
+        except Exception:
+            return 'Libro Leido'

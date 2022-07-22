@@ -31,4 +31,4 @@ class Estante(CustomModel):
     )
 	
 	def __str__(self):
-		return self.nombre
+		return str(self.nombre)

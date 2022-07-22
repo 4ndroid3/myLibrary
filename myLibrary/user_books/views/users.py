@@ -2,10 +2,12 @@ from django.shortcuts import render
 
 from rest_framework.routers import APIRootView
 from rest_framework import mixins
-from rest_framework.viewsets import GenericViewSet
+from rest_framework.viewsets import GenericViewSet, ModelViewSet
 
+from user_books.models.libro_leido import LibroGuardado
 from user_books.models.estanteria import Estante
-from user_books.serializers import EstanteriaSerializer
+
+from user_books.serializers import users
 
 # Create your views here.
 
@@ -29,4 +31,27 @@ class EstanteriaView(mixins.CreateModelMixin,
 	permite `listar`, `crear` y `actualizar`
 	"""
 	queryset = Estante.objects.filter()
-	serializer_class = EstanteriaSerializer
+	serializer_class = users.EstanteriaSerializer
+
+
+class LibrosLeidosView(ModelViewSet):
+	""" 
+	Viewset de los Libros Leidos o guardados
+	permite `listar`, `crear`, `actualizar` y `elimnar` 
+	"""
+	queryset = LibroGuardado.objects.filter()
+	serializer_class = users.LibroGuardadoSerializerMin
+
+	serializer_action_classes = {
+		'retrieve': users.LibroGuardadoSerializer,
+		'create': users.LibroGuardadoSerializer
+	}
+
+	def get_serializer_class(self):
+		try:
+			return self.serializer_action_classes[self.action]
+		except (KeyError, AttributeError):
+			return super().get_serializer_class()
+
+	def perform_create(self, serializer):
+		serializer.save(created_by=self.request.user)

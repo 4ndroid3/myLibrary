@@ -55,4 +55,7 @@ class Libro(CustomModel):
     )
 
     def __str__(self):
-        return self.nombre + ' | ' + self.autor
+        try:
+            return str(self.nombre) + ' | ' + str(self.autor.nombre) + ' ' + str(self.autor.apellido)
+        except:
+            return str(self.nombre)
