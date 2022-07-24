@@ -1,0 +1,490 @@
+[   
+    {
+        "model": "books.autor",
+        "pk": 100,
+        "fields": {
+            "nombre": "Stephen",
+            "apellido": "King",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 101,
+        "fields": {
+            "nombre": "J.R.R.",
+            "apellido": "Tolkien",
+            "pais": "England"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 102,
+        "fields": {
+            "nombre": "J.K.",
+            "apellido": "Rowling",
+            "pais": "Inglaterra"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 103,
+        "fields": {
+            "nombre": "George R.R.",
+            "apellido": "Martin",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 104,
+        "fields": {
+            "nombre": "Patrick",
+            "apellido": "Rothfuss",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 105,
+        "fields": {
+            "nombre": "Andrzej",
+            "apellido": "Sapkowski",
+            "pais": "Polonia"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 106,
+        "fields": {
+            "nombre": "Dmitry",
+            "apellido": "Glukhovsky",
+            "pais": "Rusia"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 107,
+        "fields": {
+            "nombre": "John",
+            "apellido": "Katzenbach",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 108,
+        "fields": {
+            "nombre": "Neal",
+            "apellido": "Stephenson",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 109,
+        "fields": {
+            "nombre": "Ken",
+            "apellido": "Follet",
+            "pais": "Inglaterra"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 110,
+        "fields": {
+            "nombre": "Isaac",
+            "apellido": "Asimov",
+            "pais": "Rusia"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 111,
+        "fields": {
+            "nombre": "Liu",
+            "apellido": "Cixin",
+            "pais": "China"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 112,
+        "fields": {
+            "nombre": "Daniel",
+            "apellido": "Suarez",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 113,
+        "fields": {
+            "nombre": "Andy",
+            "apellido": "Weir",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 114,
+        "fields": {
+            "nombre": "Steven",
+            "apellido": "Erikson",
+            "pais": "Canadá"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 115,
+        "fields": {
+            "nombre": "Frank",
+            "apellido": "Herbert",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 116,
+        "fields": {
+            "nombre": "Ernest",
+            "apellido": "Cline",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 117,
+        "fields": {
+            "nombre": "Ray",
+            "apellido": "Bradbury",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 118,
+        "fields": {
+            "nombre": "Arthur C.",
+            "apellido": "Clarke",
+            "pais": "Inglaterra"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 119,
+        "fields": {
+            "nombre": "Juan Ramón",
+            "apellido": "Biedma",
+            "pais": "España"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 120,
+        "fields": {
+            "nombre": "Brandon",
+            "apellido": "Sanderson",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 121,
+        "fields": {
+            "nombre": "Max",
+            "apellido": "Brooks",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 122,
+        "fields": {
+            "nombre": "William",
+            "apellido": "Gibson",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 123,
+        "fields": {
+            "nombre": "Allen",
+            "apellido": "Downey",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 124,
+        "fields": {
+            "nombre": "H.P.",
+            "apellido": "Lovecraft",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 125,
+        "fields": {
+            "nombre": "Paulo",
+            "apellido": "Coelho",
+            "pais": "Brasil"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 126,
+        "fields": {
+            "nombre": "Philip K.",
+            "apellido": "Dick",
+            "pais": "USA"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 127,
+        "fields": {
+            "nombre": "Leonardo",
+            "apellido": "Oyola",
+            "pais": "Argentina"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 128,
+        "fields": {
+            "nombre": "Estanislao",
+            "apellido": "Bachrach",
+            "pais": "Argentina"
+        }
+    },
+    {
+        "model": "books.autor",
+        "pk": 129,
+        "fields": {
+            "nombre": "George",
+            "apellido": "Orwell",
+            "pais": "Inglaterra"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 15,
+        "fields": {
+            "nombre": "Ciencia Ficción"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 16,
+        "fields": {
+            "nombre": "Aventura"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 17,
+        "fields": {
+            "nombre": "Autoayuda"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 18,
+        "fields": {
+            "nombre": "Thriller"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 19,
+        "fields": {
+            "nombre": "Fantasía"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 20,
+        "fields": {
+            "nombre": "Suspenso"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 21,
+        "fields": {
+            "nombre": "Terror"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 22,
+        "fields": {
+            "nombre": "Novela"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 23,
+        "fields": {
+            "nombre": "Western"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 24,
+        "fields": {
+            "nombre": "Historia"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 25,
+        "fields": {
+            "nombre": "Cyberpunk"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 25,
+        "fields": {
+            "nombre": "Postapocalíptica"
+        }
+    },
+    {
+        "model": "books.genero",
+        "pk": 25,
+        "fields": {
+            "nombre": "Heroica"
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 100,
+        "fields": {
+            "nombre": "El Psicoanalista",
+            "anio_publicacion": "2002",
+            "hojas": "492",
+            "autor_id": 107,
+            "genero": [
+                18, 20, 22
+            ],
+            "created_by_id": 1
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 101,
+        "fields": {
+            "nombre": "¿Sueñan los androides con ovejas electricas?",
+            "anio_publicacion": "1968",
+            "hojas": "227",
+            "autor_id": 126,
+            "genero": [
+                15, 25
+            ],
+            "created_by_id": 1
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 102,
+        "fields": {
+            "nombre": "El bosque oscuro",
+            "anio_publicacion": "2008",
+            "hojas": "605",
+            "autor_id": 111,
+            "genero": [
+                15, 22
+            ],
+            "created_by_id": 1
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 103,
+        "fields": {
+            "nombre": "Los jardines de la luna",
+            "anio_publicacion": "1999",
+            "hojas": "744",
+            "autor_id": 114,
+            "genero": [
+                19, 22, 25
+            ],
+            "created_by_id": 1
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 104,
+        "fields": {
+            "nombre": "La Torre Oscura 4: Mago y Cristal",
+            "anio_publicacion": "1997",
+            "hojas": "1031",
+            "autor_id": 100,
+            "genero": [
+                19, 21, 22
+            ],
+            "created_by_id": 1
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 105,
+        "fields": {
+            "nombre": "Silmarillion",
+            "anio_publicacion": "1977",
+            "hojas": "617",
+            "autor_id": 101,
+            "genero": [
+                19, 25
+            ],
+            "created_by_id": 1
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 106,
+        "fields": {
+            "nombre": "Dune",
+            "anio_publicacion": "1965",
+            "hojas": "644",
+            "autor_id": 115,
+            "genero": [
+                15, 22
+            ],
+            "created_by_id": 1
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 107,
+        "fields": {
+            "nombre": "Proyecto Hail Mary",
+            "anio_publicacion": "2021",
+            "hojas": "477",
+            "autor_id": 113,
+            "genero": [
+                15
+            ],
+            "created_by_id": 1
+        }
+    },
+    {
+        "model": "books.libro",
+        "pk": 108,
+        "fields": {
+            "nombre": "La Torre Oscura 3: Las Tierras Baldias",
+            "anio_publicacion": "1991",
+            "hojas": "496",
+            "autor_id": 100,
+            "genero": [
+                19, 21, 22
+            ],
+            "created_by_id": 1
+        }
+    }
+    
+]

@@ -11,7 +11,7 @@ class LibroGuardado(CustomModel):
 
     libro = models.ForeignKey(
         "books.Libro",
-        on_delete=models.DO_NOTHING,
+        on_delete=models.CASCADE,
         related_name="libro_libro_leido",
         help_text="Libro guardado por un usuario",
         null=False,
@@ -28,7 +28,7 @@ class LibroGuardado(CustomModel):
     )
     estante = models.ForeignKey(
         "user_books.Estante",
-        on_delete=models.DO_NOTHING,
+        on_delete=models.SET_NULL,
         related_name="estante_libro_leido",
         help_text="Estante donde está guardado el libro",
         null=True,

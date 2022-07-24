@@ -92,9 +92,8 @@ class LibroSerializerMin(serializers.ModelSerializer):
     class Meta:
         model = Libro
         fields = (
-            'id',
-            'url',
             'nombre',
+            'url',
             'autor',
             'anio_publicacion',
         )

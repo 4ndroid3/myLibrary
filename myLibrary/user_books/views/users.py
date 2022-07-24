@@ -38,7 +38,7 @@ class LibrosLeidosView(ModelViewSet):
 	Viewset de los Libros Leidos o guardados
 	permite `listar`, `crear`, `actualizar` y `elimnar` 
 	"""
-	queryset = LibroGuardado.objects.filter()
+	queryset = LibroGuardado.objects.filter().order_by('-fecha_leido')
 	serializer_class = users.LibroGuardadoSerializerMin
 
 	serializer_action_classes = {

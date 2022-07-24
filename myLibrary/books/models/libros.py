@@ -33,7 +33,7 @@ class Libro(CustomModel):
     autor = models.ForeignKey(
         "books.Autor",
         related_name='autor_libro',
-        on_delete=models.DO_NOTHING,
+        on_delete=models.SET_NULL,
         null=True,
         help_text="Autor del libro"
     )
