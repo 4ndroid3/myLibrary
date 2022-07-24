@@ -3,6 +3,7 @@
 from rest_framework.viewsets import GenericViewSet
 from rest_framework import mixins
 from rest_framework.routers import APIRootView
+from django_filters import rest_framework as filters
 
 from books.models import (
     Autor,
@@ -10,6 +11,7 @@ from books.models import (
 )
 from books.serializers import books
 from books.models import Libro
+from books.filters import BooksFilter
 
 
 class BooksRootView(APIRootView):
@@ -75,6 +77,8 @@ class LibrosView(mixins.CreateModelMixin,
         'retrieve': books.LibroSerializer,
         'create': books.LibroSerializer
     }
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = BooksFilter
 
     def get_serializer_class(self):
         try:

@@ -39,6 +39,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'django_extensions',
     'drf_yasg',
+    'django_filters',
 ]
 DJANGO_APPS = [
     'django.contrib.admin',
