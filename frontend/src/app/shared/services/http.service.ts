@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,28 @@ export class HttpService {
 
   constructor( private http: HttpClient ) { }
 
-  get() {
-    return this.http.get<any>('http://127.0.0.1:8000/api/',)
+  private formatErrors(error: HttpErrorResponse) {
+    return error;
+  }
+
+  private handleResponse(res: any) {
+    return res;
+  }
+
+  get(path: string, params: object = {}): Observable<any> {
+    return this.http
+    .get<any>(
+      `http://127.0.0.1:8000/api/${path}`,
+      {
+        params: this.setParams(params)
+      })
+  }
+
+  setParams(params: object): HttpParams {
+    let requestParams = new HttpParams();
+    for (const [key, value] of Object.entries(params)) {
+      requestParams = requestParams.set(key, value);
+    }
+    return requestParams;
   }
 }

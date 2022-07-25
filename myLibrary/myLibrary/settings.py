@@ -29,46 +29,29 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-# OWN_APPS = [
-#     'base_app',
-#     'user_books',
-#     'books',
-# ]
-
-# THIRD_PARTY_APPS = [
-#     'rest_framework',
-#     'django_extensions',
-#     'drf_yasg',
-#     'django_filters',
-#     'corsheaders',
-# ]
-# DJANGO_APPS = [
-#     'django.contrib.admin',
-#     'django.contrib.auth',
-#     'django.contrib.contenttypes',
-#     'django.contrib.sessions',
-#     'django.contrib.messages',
-#     'django.contrib.staticfiles',
-# ]
-
-# INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + OWN_APPS
-
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+OWN_APPS = [
     'base_app',
     'user_books',
     'books',
+]
+
+THIRD_PARTY_APPS = [
     'rest_framework',
     'django_extensions',
     'drf_yasg',
     'django_filters',
     'corsheaders',
 ]
+DJANGO_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + OWN_APPS
 
 MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
@@ -82,34 +65,11 @@ MIDDLEWARE = [
 ]
 ROOT_URLCONF = 'myLibrary.urls'
 
-# CORS_ORIGIN_ALLOW_ALL = False
-# CORS_ALLOW_ALL_ORIGINS = True
+
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
-    # 'http://127.0.0.1:4200',
 ]
-# CORS_ALLOW_CREDENTIALS = True
-# # SECURE_REFERRER_POLICY = "origin"
-# CORS_ALLOW_METHODS = (
-# 'DELETE',
-# 'GET',
-# 'OPTIONS',
-# 'PATCH',
-# 'POST',
-# 'PUT',)
 
-
-# CORS_ALLOW_HEADERS = (
-# 'accept',
-# 'accept-encoding',
-# 'authorization',
-# 'content-type',
-# 'dnt',
-# 'origin',
-# 'user-agent',
-# 'x-csrftoken',
-# 'x-requested-with',
-# 'Access-Control-Allow-Origin',)
 
 TEMPLATES = [
     {

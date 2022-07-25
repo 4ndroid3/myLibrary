@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { LibroMin } from '../interfaces/book';
+import { BooksService } from '../services/books.service';
 
 @Component({
   selector: 'app-books',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
-  constructor() { }
+  title = 'Frontend';
+  raul?: LibroMin[];
+
+  constructor(private booksS: BooksService) {  }
+  
+
 
   ngOnInit(): void {
+    this.booksS.getBooks()
+    .pipe(
+      map(t => t.results )
+    )
+    .subscribe(
+      (t: LibroMin[]) => { console.log(t)
+      this.raul = t;
+    }
+    )
   }
 
 }

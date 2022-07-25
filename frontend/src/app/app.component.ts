@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpService } from './shared/services/http.service';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +7,9 @@ import { HttpService } from './shared/services/http.service';
 })
 export class AppComponent {
   title = 'Frontend';
-  raul = 'a';
 
-  constructor(private httpS: HttpService) {  }
+  constructor() {  }
   
-  prueba() {
-    this.httpS.get().subscribe(
-      t => { console.log(t),
-      this.raul = t;}
-    )
-  }
+
 
 }

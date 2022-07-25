@@ -5,23 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { BooksComponent } from './books/books/books.component';
-import { AutoresComponent } from './books/autores/autores.component';
-import { GenerosComponent } from './books/generos/generos.component';
+import { HttpService } from './shared/services/http.service';
+import { BooksModule } from './books/books.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksComponent,
-    AutoresComponent,
-    GenerosComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BooksModule,
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
