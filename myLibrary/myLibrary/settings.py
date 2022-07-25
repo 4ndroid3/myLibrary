@@ -25,44 +25,69 @@ SECRET_KEY = 'django-insecure-k_s3rd0e-(ja!^bvva0yjj2bh@!wd4jby$95#fyd+k380e6t5z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-OWN_APPS = [
-    'base_app',
-    'user_books',
-    'books',
-]
+# OWN_APPS = [
+#     'base_app',
+#     'user_books',
+#     'books',
+# ]
 
-THIRD_PARTY_APPS = [
-    'rest_framework',
-    'django_extensions',
-    'drf_yasg',
-    'django_filters',
-]
-DJANGO_APPS = [
+# THIRD_PARTY_APPS = [
+#     'rest_framework',
+#     'django_extensions',
+#     'drf_yasg',
+#     'django_filters',
+#     'corsheaders',
+# ]
+# DJANGO_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+# ]
+
+# INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + OWN_APPS
+
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'base_app',
+    'user_books',
+    'books',
+    'rest_framework',
+    'django_extensions',
+    'drf_yasg',
+    'django_filters',
+    'corsheaders',
 ]
 
-INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + OWN_APPS
-
 MIDDLEWARE = [
+    'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 ROOT_URLCONF = 'myLibrary.urls'
+
+# CORS_ORIGIN_ALLOW_ALL = False
+# CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:4200',
+]
 
 TEMPLATES = [
     {
