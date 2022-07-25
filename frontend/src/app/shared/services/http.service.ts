@@ -9,12 +9,6 @@ export class HttpService {
   constructor( private http: HttpClient ) { }
 
   get() {
-    return this.http.get<any>('localhost:8000/api/books/', {
-      headers: {
-        // 'Content-Type': 'application/json',
-        // 'Access-Control-Allow-Origin': '*',
-        // 'Access-Control-Allow-Credentials': 'true',
-      }
-    })
+    return this.http.get<any>('http://127.0.0.1:8000/api/',)
   }
 }

@@ -8,12 +8,14 @@ import { HttpService } from './shared/services/http.service';
 })
 export class AppComponent {
   title = 'Frontend';
+  raul = 'a';
 
   constructor(private httpS: HttpService) {  }
   
   prueba() {
     this.httpS.get().subscribe(
-      t => console.log(t)
+      t => { console.log(t),
+      this.raul = t;}
     )
   }
 
