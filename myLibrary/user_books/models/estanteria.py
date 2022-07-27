@@ -22,6 +22,7 @@ class Estante(CustomModel):
         User,
         related_name='estanteria_creation',
         on_delete=models.DO_NOTHING,
+		null=True
     )
 	updated_by = models.ForeignKey(
         User,

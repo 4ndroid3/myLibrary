@@ -1,0 +1,31 @@
+<div>
+    <form [formGroup]="formBook" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="autor">Autor</label>
+            <input id="autor" type="text" formControlName="autor_id">
+        </div>
+        <div>
+            <label for="genero">Genero</label>
+            <select multiple id="genero" formControlName="genero_id">
+                <option value="17">Autoayuda</option>
+                <option value="16">Aventura</option>
+                <option value="15">Ciencia Ficción</option>
+                <option value="19">Fantasía</option>
+                <option value="25">Heroica</option>
+            </select>
+        </div>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" formControlName="nombre">
+        </div>
+        <div>
+            <label for="anio">Año Publicación</label>
+            <input id="anio" type="text" formControlName="anio_publicacion">
+        </div>
+        <div>
+            <label for="hojas">Cantidad de Hojas</label>
+            <input id="hojas" type="text" formControlName="hojas">
+        </div>        
+        <input type="submit" value="Crear">
+    </form>
+</div>

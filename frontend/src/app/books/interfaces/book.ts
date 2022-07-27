@@ -1,4 +1,4 @@
-export interface LibroMin {
+export interface Libro {
     id:               number;
     created_by:       number;
     genero:           Genero[];

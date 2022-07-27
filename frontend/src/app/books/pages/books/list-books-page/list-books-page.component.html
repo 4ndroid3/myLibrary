@@ -1,0 +1,6 @@
+<div *ngFor="let libro of libros">
+    <h2 >{{libro.nombre}} | {{ libro.anio_publicacion }}</h2>
+    <span>{{ libro.autor.nombre }} {{ libro.autor.apellido }}</span>
+    <br>
+    <a href="{{ libro.url }}">Detalle</a>
+</div>

@@ -27,6 +27,13 @@ export class HttpService {
       })
   }
 
+  post(path: string, body: Object = {}): Observable<any> {
+    return this.http.post(
+      `http://127.0.0.1:8000/api/${path}`,
+      body
+    )
+  }
+
   setParams(params: object): HttpParams {
     let requestParams = new HttpParams();
     for (const [key, value] of Object.entries(params)) {

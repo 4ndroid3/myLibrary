@@ -87,5 +87,7 @@ class LibrosView(mixins.CreateModelMixin,
             return super().get_serializer_class()
     
     def perform_create(self, serializer):
-        print(self.request.user)
-        serializer.save(created_by=self.request.user)
+        if self.request.user.id:
+            serializer.save(created_by=self.request.user)
+        else:
+            serializer.save()

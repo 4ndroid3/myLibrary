@@ -38,6 +38,7 @@ class LibroGuardado(CustomModel):
         User,
         related_name='libro_leido_creation',
         on_delete=models.DO_NOTHING,
+        null=True
     )
     updated_by = models.ForeignKey(
         User,

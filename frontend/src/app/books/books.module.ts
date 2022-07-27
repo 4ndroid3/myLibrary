@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BooksService } from './services/books.service';
-import { BooksComponent } from './books/books.component';
-import { AutoresComponent } from './autores/autores.component';
-import { GenerosComponent } from './generos/generos.component';
+import { BooksComponent } from './pages/books/books.component';
+import { AutoresComponent } from './pages/autores/autores.component';
+import { GenerosComponent } from './pages/generos/generos.component';
 import { BooksRoutingModule } from './books-routing.module';
+import { CreateBookFormComponent } from './components/create-book-form/create-book-form.component';
+import { ListBooksPageComponent } from './pages/books/list-books-page/list-books-page.component';
+import { CreateBooksPageComponent } from './pages/books/create-books-page/create-books-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,11 +16,15 @@ import { BooksRoutingModule } from './books-routing.module';
   declarations: [
     BooksComponent,
     AutoresComponent,
-    GenerosComponent
+    GenerosComponent,
+    CreateBookFormComponent,
+    ListBooksPageComponent,
+    CreateBooksPageComponent
   ],
   imports: [
     CommonModule,
-    BooksRoutingModule
+    BooksRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [BooksService],
 })
