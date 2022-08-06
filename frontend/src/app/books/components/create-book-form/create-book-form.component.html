@@ -2,17 +2,32 @@
     <form [formGroup]="formBook" (ngSubmit)="onSubmit()">
         <div>
             <label for="autor">Autor</label>
-            <input id="autor" type="text" formControlName="autor_id">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <input type="text"
+                       id="autor"                     
+                       matInput
+                       [(ngModel)]="termino"
+                       formControlName="autor_id"                       
+                       [matAutocomplete]="auto"
+                       (input)="buscando()">
+                <mat-autocomplete   #auto="matAutocomplete"
+                                    (optionSelected)="opcionSeleccionada( $event )">
+                    <mat-option *ngFor="let autor of autores" [value]="autor">
+                        {{ autor.nombre }} {{ autor.apellido }}
+                    </mat-option>
+                    <mat-option *ngIf="autores?.length === 0 && termino.length > 0" [value]="">
+                    No se encontró el valor {{ termino }}
+                    </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
         </div>
         <div>
-            <label for="genero">Genero</label>
-            <select multiple id="genero" formControlName="genero_id">
-                <option value="17">Autoayuda</option>
-                <option value="16">Aventura</option>
-                <option value="15">Ciencia Ficción</option>
-                <option value="19">Fantasía</option>
-                <option value="25">Heroica</option>
-            </select>
+            <mat-form-field appearance="fill">
+                <mat-label>Toppings</mat-label>
+                <mat-select [formControl]="toppings" multiple>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+              </mat-form-field>
         </div>
         <div>
             <label for="nombre">Nombre</label>

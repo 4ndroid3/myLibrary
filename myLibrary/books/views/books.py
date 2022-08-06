@@ -11,7 +11,7 @@ from books.models import (
 )
 from books.serializers import books
 from books.models import Libro
-from books.filters import BooksFilter
+from books.filters import AutorsFilter, BooksFilter
 
 
 class BooksRootView(APIRootView):
@@ -55,6 +55,8 @@ class AutoresView(mixins.CreateModelMixin,
     serializer_action_classes = {
         'retrieve': books.AutorSerializer
     }
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = AutorsFilter
 
     def get_serializer_class(self):
         try:

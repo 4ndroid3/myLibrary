@@ -10,11 +10,19 @@ export class BooksService {
 
   constructor(private http: HttpService) { }
 
-  getBooks(): Observable<any>{
-    return this.http.get('books/libros/');
+  getBooks(param: {}): Observable<any>{
+    return this.http.get('books/libros/', param);
   }
 
   createBooks(data: object = {}) {
     return this.http.post(`books/libros/`, data);
+  }
+
+  getAutors(param: {}): Observable<any> {
+    return this.http.get('books/autores/', param);
+  }
+
+  getAutor(id: number): Observable<any> {
+    return this.http.get(`books/autores/${id}`);
   }
 }

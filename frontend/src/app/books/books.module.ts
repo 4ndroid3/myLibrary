@@ -9,6 +9,7 @@ import { CreateBookFormComponent } from './components/create-book-form/create-bo
 import { ListBooksPageComponent } from './pages/books/list-books-page/list-books-page.component';
 import { CreateBooksPageComponent } from './pages/books/create-books-page/create-books-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material/material.module';
 
 
 
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     BooksRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule,
   ],
   providers: [BooksService],
 })

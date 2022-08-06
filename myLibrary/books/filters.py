@@ -3,6 +3,8 @@ from django_filters import rest_framework as filters
 from books.models import Libro
 from django.db.models import Q
 
+from books.models.about_libros import Autor
+
 
 
 class BooksFilter(filters.FilterSet):
@@ -35,3 +37,14 @@ class BooksFilter(filters.FilterSet):
     #             Q(autor__apellido__icontains=autor)
     #         )
     #     return queryset
+
+
+class AutorsFilter(filters.FilterSet):
+    """ filters about autors """
+    nombre = filters.CharFilter(field_name='nombre', lookup_expr='icontains')
+    apellido = filters.CharFilter(field_name='apellido', lookup_expr='icontains')
+    pais = filters.CharFilter(field_name='pais', lookup_expr='icontains')
+
+    class Meta:
+        model = Autor
+        fields = '__all__'

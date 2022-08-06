@@ -12,12 +12,14 @@ export class ListBooksPageComponent implements OnInit {
 
   libros?: Libro[];
 
+
   constructor(private booksS: BooksService) {  }
   
 
 
   ngOnInit(): void {
-    this.booksS.getBooks()
+    let params = {}
+    this.booksS.getBooks(params)
     .pipe(
       map(t => t.results )
     )

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './shared/services/http.service';
 import { BooksModule } from './books/books.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BooksModule } from './books/books.module';
     HttpClientModule,
     AppRoutingModule,
     BooksModule,
+    BrowserAnimationsModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
