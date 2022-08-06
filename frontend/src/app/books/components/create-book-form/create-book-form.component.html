@@ -1,17 +1,20 @@
-<div>
+<mat-card class="form-centred-card">
+    <mat-card-title>Agregar Libros</mat-card-title>
+    <mat-card-subtitle>Libros para Leer o Leidos</mat-card-subtitle>
     <form [formGroup]="formBook" (ngSubmit)="onSubmit()">
+
         <div>
-            <label for="autor">Autor</label>
-            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Autor</mat-label>
                 <input type="text"
-                       id="autor"                     
-                       matInput
-                       [(ngModel)]="termino"
-                       formControlName="autor_id"                       
-                       [matAutocomplete]="auto"
-                       (input)="buscando()">
-                <mat-autocomplete   #auto="matAutocomplete"
-                                    (optionSelected)="opcionSeleccionada( $event )">
+                    id="autor"                     
+                    matInput
+                    [(ngModel)]="termino"
+                    formControlName="autor_id"                       
+                    [matAutocomplete]="auto"
+                    (input)="buscando()">
+                <mat-autocomplete #auto="matAutocomplete"
+                                  (optionSelected)="opcionSeleccionada( $event )">
                     <mat-option *ngFor="let autor of autores" [value]="autor">
                         {{ autor.nombre }} {{ autor.apellido }}
                     </mat-option>
@@ -19,28 +22,42 @@
                     No se encontró el valor {{ termino }}
                     </mat-option>
                 </mat-autocomplete>
-              </mat-form-field>
+            </mat-form-field>
         </div>
+
         <div>
             <mat-form-field appearance="fill">
-                <mat-label>Toppings</mat-label>
-                <mat-select [formControl]="toppings" multiple>
-                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                <mat-label>Generos</mat-label>
+                <mat-select formControlName="genero_id" multiple>
+                    <mat-option *ngFor="let genero of generosList" [value]="genero">{{ genero }}</mat-option>
                 </mat-select>
-              </mat-form-field>
+            </mat-form-field>
         </div>
+
         <div>
-            <label for="nombre">Nombre</label>
-            <input id="nombre" type="text" formControlName="nombre">
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" value="" formControlName="nombre">
+            </mat-form-field>
         </div>
+
         <div>
-            <label for="anio">Año Publicación</label>
-            <input id="anio" type="text" formControlName="anio_publicacion">
+            <mat-form-field appearance="fill">
+                <mat-label>Año Publicación</mat-label>
+                <input matInput placeholder="Año" value="" formControlName="anio_publicacion">
+            </mat-form-field>
         </div>
+
         <div>
-            <label for="hojas">Cantidad de Hojas</label>
-            <input id="hojas" type="text" formControlName="hojas">
-        </div>        
-        <input type="submit" value="Crear">
+            <mat-form-field appearance="fill">
+                <mat-label>Cantidad de Hojas</mat-label>
+                <input matInput placeholder="Año" value="" formControlName="hojas">
+            </mat-form-field>
+        </div>
+
+        <mat-card-actions>
+            <button mat-raised-button color="accent" type="submit">Crear</button>
+        </mat-card-actions> 
+
     </form>
-</div>
+</mat-card>

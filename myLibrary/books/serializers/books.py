@@ -43,6 +43,7 @@ class AutorSerializerMin(serializers.ModelSerializer):
     class Meta:
         model = Autor
         fields = (
+            'id',
             'url',
             'nombre',
             'apellido',

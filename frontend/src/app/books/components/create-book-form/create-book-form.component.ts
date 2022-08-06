@@ -8,7 +8,7 @@ import { map } from 'rxjs';
 @Component({
   selector: 'app-create-book-form',
   templateUrl: './create-book-form.component.html',
-  styleUrls: ['./create-book-form.component.css']
+  styleUrls: ['./create-book-form.component.scss']
 })
 export class CreateBookFormComponent implements OnInit {
 
@@ -27,29 +27,33 @@ export class CreateBookFormComponent implements OnInit {
   autorSeleccionado!: Autor | undefined;
   termino: string = '';
 
-  toppings = new FormControl('');
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  generosList: string[] = ['Autoayuda', 'Aventura', 'CienciaFicción', 'Fantasía', 'Heroica', 'Thriller', 'Suspenso', 'Terror', 'Novela', 'Western', 'Historia'];
+  generosDict = new Map([
+    ['Autoayuda', 17],
+    ['Aventura', 16],
+    ['CienciaFicción', 15],
+    ['Fantasía', 19],
+    ['Heroica', 25],
+    ['Thriller', 18],
+    ['Suspenso', 20],
+    ['Terror', 21],
+    ['Novela', 22],
+    ['Western', 23],
+    ['Historia', 24],
+  ])
+  
+  generosId: any = []
 
   constructor(private bService: BooksService,) {}
 
   ngOnInit(): void {
-    // enum generosEnum {
-    //   Autoayuda = 17,
-    //   Aventura = 16,
-    //   CienciaFicción = 15,
-    //   Fantasía = 19,
-    //   Heroica = 25,
-    //   Thriller = 18,
-    //   Suspenso = 20,
-    //   Terror = 21,
-    //   Novela = 22,
-    //   Western = 23,
-    //   Historia = 24,
-    // }
-
+  
   }
   
   onSubmit() {
+    this.formBook.controls['autor_id'].setValue(this.autorSeleccionado!.id.toString())
+    this.convertirGeneroId(this.formBook.value['genero_id']);
+    this.formBook.controls['genero_id'].setValue(this.generosId)
     this.createdData = this.formBook.value
     this.bService.createBooks(this.createdData).subscribe()
     this.formBook.reset()
@@ -68,7 +72,6 @@ export class CreateBookFormComponent implements OnInit {
   }
 
   opcionSeleccionada( event: MatAutocompleteSelectedEvent) {
-
     if (!event.option.value) {
       this.autorSeleccionado = undefined;
       return;
@@ -76,11 +79,26 @@ export class CreateBookFormComponent implements OnInit {
 
     const autor: Autor = event.option.value;
     this.termino = autor.nombre;
+
     this.bService.getAutor( autor.id )
-      .subscribe( autor => this.autorSeleccionado = autor);
+      .subscribe( autor => {
+        this.autorSeleccionado = autor;
+      });
   }
 
-  
+  convertirGeneroId(generosSelec: any) {
+    if (generosSelec.length > 0) {
+      
+      for (let entry of this.generosDict.entries()) {
+        generosSelec.forEach((element:any) => {
+          if (entry[0] === element) {
+            this.generosId.push(entry[1])
+          }
+        });
+      }
+    }
+    console.log(this.generosId)
+  } 
 
 
 
