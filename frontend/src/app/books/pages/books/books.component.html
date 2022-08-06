@@ -1,5 +1,10 @@
-<h1>Libros</h1>
-<a routerLink="./listado/">Listado de Libros |</a>
-
-<a routerLink="./creacion/"> Creacion de un nuevo libro</a>
+<mat-card>
+    <mat-card-title>
+        Libros Agregados
+    </mat-card-title>
+    <a mat-button  routerLink="./listado/">Listado de Libros </a>
+    <span>|</span>
+    <a mat-button  routerLink="./creacion/"> Creacion de un nuevo libro</a>
+</mat-card>
+<br>
 <router-outlet></router-outlet>

@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCommonModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatCommonModule,
     MatCardModule,
+    MatToolbarModule,
   ]
 })
 export class MaterialModule { }

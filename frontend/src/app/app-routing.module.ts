@@ -5,7 +5,11 @@ const routes: Routes = [
   {
     path: 'libros',
     loadChildren: () => import('./books/books.module').then( m => m.BooksModule )
-  }
+  },
+  {
+    path: 'mislibros',
+    loadChildren: () => import('./mybooks/mybooks.module').then( m => m.MyBooksModule )
+  },
 ];
 
 @NgModule({

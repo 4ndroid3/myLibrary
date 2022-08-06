@@ -8,10 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './shared/services/http.service';
 import { BooksModule } from './books/books.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { MaterialModule } from './material/material/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BooksModule,
     BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
