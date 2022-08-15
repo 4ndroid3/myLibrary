@@ -97,4 +97,5 @@ class LibroSerializerMin(serializers.ModelSerializer):
             'url',
             'autor',
             'anio_publicacion',
+            'img_cover',
         )

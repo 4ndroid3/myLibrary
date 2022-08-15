@@ -1,6 +1,2 @@
-<div *ngFor="let libro of libros">
-    <h2 >{{libro.nombre}} | {{ libro.anio_publicacion }}</h2>
-    <span>{{ libro.autor.nombre }} {{ libro.autor.apellido }}</span>
-    <br>
-    <a href="{{ libro.url }}">Detalle</a>
-</div>
+
+<app-book-box *ngFor="let libro of libros" [libro]="libro"></app-book-box>

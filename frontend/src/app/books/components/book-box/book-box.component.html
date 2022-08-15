@@ -1,0 +1,17 @@
+<div class="columns">
+    <div class="column is-one-quarter">
+        <img id="book-image" [src]="libro | imagen">
+    </div>
+    <div class="column">
+        <div class="">
+            <h2 class="title is-4">{{libro.nombre}} | {{ libro.anio_publicacion }}</h2>
+        </div>
+        <div class="">
+            <h3>{{ libro.autor.nombre }} {{ libro.autor.apellido }}</h3>
+        </div>
+    </div>    
+    <div class="column is-one-quarter">
+        <a class="" mat-raised-button href="{{ libro.url }}">Detalle</a>
+    </div>
+</div>
+

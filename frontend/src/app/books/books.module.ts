@@ -10,6 +10,8 @@ import { ListBooksPageComponent } from './pages/books/list-books-page/list-books
 import { CreateBooksPageComponent } from './pages/books/create-books-page/create-books-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material/material.module';
+import { BookBoxComponent } from './components/book-box/book-box.component';
+import { ImagenPipe } from './pipes/imagen.pipe';
 
 
 
@@ -20,7 +22,9 @@ import { MaterialModule } from '../material/material/material.module';
     GenerosComponent,
     CreateBookFormComponent,
     ListBooksPageComponent,
-    CreateBooksPageComponent
+    CreateBooksPageComponent,
+    BookBoxComponent,
+    ImagenPipe
   ],
   imports: [
     CommonModule,
