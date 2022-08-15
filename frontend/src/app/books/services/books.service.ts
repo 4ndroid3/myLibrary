@@ -25,4 +25,8 @@ export class BooksService {
   getAutor(id: number): Observable<any> {
     return this.http.get(`books/autores/${id}/`);
   }
+  
+  getGeneros(param: {})  : Observable<any>{
+    return this.http.get('books/generos/', param);
+  }
 }

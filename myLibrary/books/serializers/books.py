@@ -22,6 +22,7 @@ class GeneroSerializerMin(serializers.ModelSerializer):
     class Meta:
         model = Genero
         fields = (
+            'id',
             'url',
             'nombre',
         )
@@ -97,5 +98,7 @@ class LibroSerializerMin(serializers.ModelSerializer):
             'url',
             'autor',
             'anio_publicacion',
+            'hojas',
             'img_cover',
+            'genero'
         )

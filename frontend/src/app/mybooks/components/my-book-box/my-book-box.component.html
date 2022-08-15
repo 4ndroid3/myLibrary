@@ -1,0 +1,16 @@
+<div class="columns">
+    <div class="column is-one-quarter">
+        <img id="book-image" [src]="miLibro | imagen">
+    </div>
+    <div class="column">
+        <h2 class="title is-4">
+            {{miLibro.libro.nombre}} | <b>{{ miLibro.libro.anio_publicacion }}</b> |
+            <small><i>{{ miLibro.libro.autor.nombre }} {{ miLibro.libro.autor.apellido }}</i></small>
+        </h2>
+        
+        <h3>Fecha Leido: <b>{{ miLibro.fecha_leido }}</b> | Cantidad de Páginas: <b>{{ miLibro.libro.hojas }}</b></h3>
+    </div>    
+    <div class="column is-one-quarter">
+        <a class="" mat-raised-button href="{{ miLibro.libro.url }}">Detalles del libro</a>
+    </div>
+</div>

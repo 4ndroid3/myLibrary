@@ -8,6 +8,8 @@ import { ListMybooksPageComponent } from './pages/mybooks/list-mybooks-page/list
 import { EstanteriasComponent } from './pages/estanterias/estanterias.component';
 import { MyBooksRoutingModule } from './mybooks-routing.module';
 import { MybooksService } from './services/mybooks.service';
+import { MyBookBoxComponent } from './components/my-book-box/my-book-box.component';
+import { ImagenPipe } from './pipes/imagen.pipe';
 
 
 
@@ -16,7 +18,9 @@ import { MybooksService } from './services/mybooks.service';
     MybooksComponent,
     CreateMybooksPageComponent,
     ListMybooksPageComponent,
-    EstanteriasComponent
+    EstanteriasComponent,
+    MyBookBoxComponent,
+    ImagenPipe
   ],
   imports: [
     CommonModule,

@@ -3,15 +3,14 @@
         <img id="book-image" [src]="libro | imagen">
     </div>
     <div class="column">
-        <div class="">
-            <h2 class="title is-4">{{libro.nombre}} | {{ libro.anio_publicacion }}</h2>
-        </div>
-        <div class="">
-            <h3>{{ libro.autor.nombre }} {{ libro.autor.apellido }}</h3>
-        </div>
+        <h2 class="title is-4">
+            {{libro.nombre}} | <b>{{ libro.anio_publicacion }}</b> |
+            <small><i>{{ libro.autor.nombre }} {{ libro.autor.apellido }}</i></small>
+        </h2>
+        
+        <h3>Cantidad de Páginas: <b>{{ libro.hojas }}</b></h3>
     </div>    
     <div class="column is-one-quarter">
-        <a class="" mat-raised-button href="{{ libro.url }}">Detalle</a>
+        <a class="" mat-raised-button href="{{ libro.url }}">Detalles del libro</a>
     </div>
 </div>
-
