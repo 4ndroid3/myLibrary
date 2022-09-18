@@ -16,7 +16,6 @@ export class MyBookBoxComponent implements OnInit {
   ngOnInit(): void {
     this.bookService.getGeneros({})
       .subscribe(
-        e => console.log(e)
       )
   }
 

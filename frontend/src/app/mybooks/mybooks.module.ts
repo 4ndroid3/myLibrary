@@ -10,6 +10,8 @@ import { MyBooksRoutingModule } from './mybooks-routing.module';
 import { MybooksService } from './services/mybooks.service';
 import { MyBookBoxComponent } from './components/my-book-box/my-book-box.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { Imagen2Pipe } from './pipes/imagen2.pipe';
+import { CreateMyBookFormComponent } from './components/create-my-book-form/create-my-book-form.component';
 
 
 
@@ -20,13 +22,16 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     ListMybooksPageComponent,
     EstanteriasComponent,
     MyBookBoxComponent,
-    ImagenPipe
+    ImagenPipe,
+    Imagen2Pipe,
+    CreateMyBookFormComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MaterialModule,
-    MyBooksRoutingModule
+    MyBooksRoutingModule,
+    
   ],
   providers: [MybooksService],
 })

@@ -1,0 +1,71 @@
+<mat-card class="form-centred-card">
+    <mat-card-title>Agregar Libros Leidos</mat-card-title>
+    <div class="columns mt-2">
+
+        <div class="column is-one-third">
+            <form [formGroup]="formMyBook" (ngSubmit)="guardar()" autocomplete="off">
+
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Libro</mat-label>
+                        <input type="text" id="libro" matInput [(ngModel)]="termino" formControlName="libro_id"
+                            [matAutocomplete]="auto" (input)="buscando()">
+                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="opcionSeleccionada( $event )">
+                            <mat-option *ngFor="let libro of libros" [value]="libro">
+                                {{ libro.nombre }}
+                            </mat-option>
+                            <mat-option *ngIf="libros?.length === 0 && termino.length > 0" [value]="">
+                                No se encontró el valor {{ termino }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Estanteria</mat-label>
+                        <input matInput placeholder="Estanteria" value="" formControlName="estante_id">
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Fecha Leido</mat-label>
+                        <input type="date" matInput placeholder="Fecha Leido" value="" formControlName="fecha_leido">
+                    </mat-form-field>
+                </div>
+
+
+                <mat-card-actions>
+                    <button mat-raised-button color="accent" type="submit" [disabled]="formMyBook.invalid">
+                        Crear
+                    </button>
+                </mat-card-actions>
+
+            </form>
+        </div>
+        <div class="column columns"
+             *ngIf="libroSeleccionado">
+             <div class="column mt-6">
+                 <h5>Libro Seleccionado</h5>
+                 <div class="">
+                     {{ libroSeleccionado.nombre }}
+                    </div>
+                    <div>
+                        Autor: {{ libroSeleccionado.autor.nombre }} 
+                        {{ libroSeleccionado.autor.apellido }}
+                    </div>
+                    <div>
+                        Año: {{ libroSeleccionado.anio_publicacion }}
+                    </div>
+                </div>
+                <div class="column">
+                    <img id="book-preview" [src]="libroSeleccionado | imagen2">
+                </div>
+        </div>
+    </div>
+</mat-card>
+
+<div *ngFor="let libro of libros">
+    {{ libro.nombre }}
+</div>

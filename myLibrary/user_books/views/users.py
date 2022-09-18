@@ -6,9 +6,11 @@ from rest_framework.viewsets import (
 	GenericViewSet,
 	ModelViewSet,
 )
+from user_books.filters import MyBooksFilter
 from user_books.models.libro_leido import LibroGuardado
 from user_books.models.estanteria import Estante
 from user_books.serializers import users
+from django_filters import rest_framework as filters
 
 
 class UserBooksRootView(APIRootView):
@@ -45,6 +47,8 @@ class LibrosLeidosView(ModelViewSet):
 		'retrieve': users.LibroGuardadoSerializer,
 		'create': users.LibroGuardadoSerializer
 	}
+	filter_backends = (filters.DjangoFilterBackend,)
+	filterset_class = MyBooksFilter
 
 	def get_serializer_class(self):
 		try:

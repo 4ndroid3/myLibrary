@@ -13,6 +13,10 @@ export class MybooksService {
     return this.http.get('user-books/libros/', param);
   }
 
+  getMyBook( id: number ) {
+    return this.http.get(`user-books/libros/${id}/`);
+  }
+
   createMyBooks(data: object = {}) {
     return this.http.post(`user-books/libros/`, data);
   }

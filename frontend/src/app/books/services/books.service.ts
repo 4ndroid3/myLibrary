@@ -14,6 +14,10 @@ export class BooksService {
     return this.http.get('books/libros/', param);
   }
 
+  getBook(id: number): Observable<any>{
+    return this.http.get(`books/libros/${id}/`);
+  }
+
   createBooks(data: object = {}) {
     return this.http.post(`books/libros/`, data);
   }

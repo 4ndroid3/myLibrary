@@ -97,7 +97,6 @@ export class CreateBookFormComponent implements OnInit {
         });
       }
     }
-    console.log(this.generosId)
   } 
 
 
