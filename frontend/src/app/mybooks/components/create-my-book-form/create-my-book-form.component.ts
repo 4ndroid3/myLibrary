@@ -35,6 +35,9 @@ export class CreateMyBookFormComponent implements OnInit {
   guardar() {
     this.formMyBook.controls['libro_id'].setValue(this.libroSeleccionado!.id.toString())
     console.log(this.formMyBook.value)
+    this.myBooksService.createMyBooks(this.formMyBook.value).subscribe(
+      data => console.log(data)
+    )
     console.log('Guardado')
     this.formMyBook.reset()
   }
