@@ -1,5 +1,6 @@
 """ Filtros correspondientes a los libros leidos """
 from django_filters import rest_framework as filters
+from .models.estanteria import Estante
 
 from user_books.models.libro_leido import LibroGuardado
 
@@ -10,4 +11,13 @@ class MyBooksFilter(filters.FilterSet):
     fecha_leido_menor = filters.DateFilter(field_name='fecha_leido', lookup_expr='lte')
     class Meta:
         model = LibroGuardado
+        fields = ''
+
+
+class EstanteriaFilter(filters.FilterSet):
+    """ Filtra las estanterias de un usuario """
+    nombre = filters.CharFilter(lookup_expr='icontains')
+    private = filters.BooleanFilter()
+    class Meta:
+        model = Estante
         fields = ''

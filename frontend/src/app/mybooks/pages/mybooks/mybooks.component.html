@@ -8,3 +8,16 @@
 </mat-card>
 <br>
 <router-outlet></router-outlet>
+<form [formGroup]="filtros" (ngSubmit)="buscar()" autocomplete="off">
+    <label for="">Desde</label>
+    <input type="date" formControlName="fecha_leido_mayor">
+    <label for="">Hasta</label>
+    <input type="date" formControlName="fecha_leido_menor">
+    <button type="submit">Buscar</button>
+</form>
+<p>Hojas: {{ total_hojas }}</p>
+<p>Libros: {{ total_libros }}</p>
+<p>Total Autores: {{ total_autores }}</p>
+
+<!-- <p *ngFor="let libro of libros">{{ libro?.libro?.nombre }}</p> -->
+<p *ngFor="let autor of autores">{{ autor.nombre }} {{ autor.apellido }}</p>

@@ -6,7 +6,10 @@ from rest_framework.viewsets import (
 	GenericViewSet,
 	ModelViewSet,
 )
-from user_books.filters import MyBooksFilter
+from user_books.filters import (
+	EstanteriaFilter,
+	MyBooksFilter,
+)
 from user_books.models.libro_leido import LibroGuardado
 from user_books.models.estanteria import Estante
 from user_books.serializers import users
@@ -33,6 +36,8 @@ class EstanteriaView(mixins.CreateModelMixin,
 	"""
 	queryset = Estante.objects.filter()
 	serializer_class = users.EstanteriaSerializer
+	filter_backends = (filters.DjangoFilterBackend,)
+	filterset_class = EstanteriaFilter
 
 
 class LibrosLeidosView(ModelViewSet):
@@ -57,4 +62,4 @@ class LibrosLeidosView(ModelViewSet):
 			return super().get_serializer_class()
 
 	def perform_create(self, serializer):
-		serializer.save(created_by=self.request.user)
+		serializer.save()
